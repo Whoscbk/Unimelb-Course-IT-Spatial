@@ -1,0 +1,64 @@
+FIELD NAME ,FIELD TYPE ,FIELD WIDTH ,FIELD DEFINITION ,FIELD DOMAIN 
+ACCIDENT_NO ,Text ,12,Accident Number ,E.g. T20100000010 
+ABS_CODE ,Text ,100,Australian Bureau of Statistics classification of incidents ,On Road Casualty Incidents 
+ACCIDENT_STATUS ,Text ,100,Accident Status ,"Finished, On Hold, Reopened "
+ACCIDENT_DATE ,Text ,255,Accident Date ,dd/mm/yyyy. (e.g.: 10 July 1995 = 10/07/1995) 
+ACCIDENT_TIME ,Text ,255,Accident Time ,hh.mm.ss 
+ACCIDENT_1,Text ,100,Accident Type ,• Collision with a fixed object • Collision with some other object • Collision with vehicle • Fall from or in moving vehicle • No collision and no object struck • Other accident • Struck animal • Struck Pedestrian • Vehicle overturned (no collision) 
+DAY_OF_WEEK ,Text ,100,Day of week ,E.g. Monday 
+DCA_CODE ,Text ,100,Definition for Classifying Accident. Link to DCA Chart and Sub DCA Codes https://vicroads-public.sharepoint.com/InformationAccess/Shared%20Documents/Road%20Safety/Crash/Accident/DCA_Chart_and_Sub_DCA_Codes.PDF ,Further information can found via : https://crashstat1.roads.vic.gov.au/crashstats/uguide.pdf https://crashstat1.roads.vic.gov.au/crashstats/appendices.pdf 
+HIT_RUN_FLAG ,Text ,100,Indicates whether or not the crash was a hit-run accident. ,"No, Yes, Unknown "
+LIGHT_CONDITION ,Text ,100,Indicates the light condition or level of brightness at the time of the accident. ,"Day, Dusk/dawn, Dark (street lights on), Dark (street lights off), Dark (no street lights), Dark (street lights unknown), Unknown "
+POLICE_ATTEND ,Text ,100,POLICE_ATTEND is a character field indicates whether the police attended the scene of the accident or not. ,Yes No Not known 
+ROAD_GEOMETRY ,Text ,100,ROAD_GEOMETRY is a character field indicates the layout of the road where the accident occurred. ,Cross intersection T-intersection Y-intersection Multiple intersections Not at intersection Dead end Road closure Private property Unknown 
+SEVERITY ,Text ,100,"SEVERITY is a character field indicates VicRoads estimation of the severity or seriousness of the accident, based on the POLICE_SEVERITY field. ",Fatal accident Serious injury accident Other injury accident Non injury accident 
+SPEED_ZONE ,Text ,100,SPEED_ZONE is a character field indicates the speed zone at the location of the accident. The speed zone is generally assigned to the main vehicle involved. ,30km/hr 40km/hr 50km/hr 60km/hr 70km/hr 75km/hr 80km/hr 90km/hr 100km/hr 110km/hr Other speed limit Camping grounds or off road Not known 
+RUN_OFFROAD ,Text ,3,Whether the crash involves a vehicle running off the road. ,Yes No 
+NODE_ID ,Number ,6,NODE_ID is an integer field that uniquely identifies the accident node. It should start with 1 and be incremented by one when a new accident location is identified. ,-10 -3 -1 78 to 288502 
+Longitude ,Double ,8,GDA94 Longitude coordinate - Decimal Dregrees ,  
+Latitude ,Double ,8,GDA94 Latitude coordinate - Decimal Degrees ,  
+NODE_TYPE ,Text ,100,NODE_TYPE is a character field indicates location type identified by the RCIS spatial system. ,"Intersection, Non-Intersection, Off Road, Blank (Unknown) "
+LGA_NAME ,Text ,100,LGA_NAME is a character field contains the LGA name. ,Blank (indicates unknown) 
+REGION_NAME ,Text ,35,REGION_NAME is a character field contains the VicRoads region name. ,"EASTERN REGION, METROPOLITAN NORTH WEST REGION, METROPOLITAN SOUTH EAST REGION, NORTH EASTERN REGION, NORTHERN REGION, SOUTH WESTERN REGION, Blank (unknown) "
+VICGRID_X ,Double ,16,VICGRID_X is a field indicating the grid reference in the x direction to provide a location reference for the crash using the VICGRID 1994 co-ordinate system. ,  
+VICGRID_Y ,Double ,16,VICGRID_Y is a field indicating the grid reference in the y direction to provide a location reference for the crash using the VICGRID 1994 co-ordinate system. ,  
+TOTAL_PERSONS ,Number ,4,Total number of persons involved in the crash. ,  
+INJ_OR_FATAL ,Number ,4,Total Casualties - Total Persons Killed or Injured ,  
+FATALITY ,Number ,4,Number of persons killed in the crash. ,  
+SERIOUSINJURY ,Number ,4,Number of Persons seriously injured in the crash. Any person taken to hospital more likely to be classed as a serious injury. ,  
+OTHERINJURY ,Number ,4,Number of Persons injured but not classed as seriously injured in the crash. ,  
+NONINJURED ,Number ,4,Total persons involved but not injured in crash. ,  
+MALES ,Number ,4,Total males involved in the crash. ,  
+FEMALES ,Number ,4,Total females involved in the crash. ,  
+BICYCLIST ,Number ,4,Number of pedal BICYCLISTs involved in the crash. ,  
+PASSENGER ,Number ,4,Number of Vehicle PASSENGERS involved in the crash. ,  
+DRIVER ,Number ,4,Number of DRIVERS involved in the crash. ,  
+PEDESTRIAN ,Number ,4,Number of Vehicle pedestrians involved in the crash. ,  
+PILLION ,Number ,4,Number of Pillion Passengers involved in the crash. ,  
+MOTORIST ,Number ,4,Number of MOTORCYCLISTS involved in the crash. ,  
+UNKNOWN ,Number ,4,Number of persons involved in crash not classified into a known category of road user by police report. ,  
+PED_CYCLIST_5_12 ,Number ,4,Number of 5 to 12 year old pedestrians and cyclists involved in the crash. ,  
+PED_CYCLIST_13_18 ,Number ,4,Number of 13 to 18 year old pedestrians and cyclists involved in the crash. ,  
+OLD_PEDESTRIAN ,Number ,4,Number of 65 years and older pedestrians involved in the crash. ,  
+OLD_DRIVER ,Number ,4,Number of 65 years and older drivers involved in the crash. ,  
+YOUNG_DRIVER ,Number ,4,Number of 18-25 year old young drivers involved in the crash. ,  
+ALCOHOL_RELATED ,Text ,3,"Alcohol Related Crashes BAC>0.001 and road user type=driver,rider,cyclist,pedestrian ","Yes, No "
+UNLICENCSED ,Number ,4,Unlicensed Drivers(road_user_type= driver & License Type =7 OR License Status< /> 9 and V Valid and Not Applicable) ,"(1) Yes, (0) No "
+NO_OF_VEHICLES ,Number ,4,Number of vehicles involved in the crash. ,  
+HEAVYVEHICLE ,Number ,4,Number of heavy vehicles involved in the crash. ,  
+PASSENGERVEHICLE ,Number ,4,Number of passenger vehicles involved in the crash. ,  
+MOTORCYCLE ,Number ,4,Number of motorcycles involved in the crash. ,  
+PUBLICVEHICLE ,Number ,4,Number of Public Transport Vehicles (primarily trams and buses) involved in the crash. ,  
+DEG_URBAN_NAME ,Text ,40,DEG_URBAN_NAME provides the type of urbanised area for the crash site. ,"Country, Large Provincial Cities, Metropolitan CBD Only, Metropolitan Excluding CBD, Other Towns, Small Provincial Cities, Small Towns. "
+DEG_URBAN_ALL ,Text ,250,"DEG_URBAN_ALL provides the type of urbanised area for the crash site in more detail. In some cases where a crash occurred on a border, several names will occur. ","Country, Large Provincial Cities, Large Provincial Cities Country Parts, Metropolitan CBD Only, Metropolitan Excluding CBD, Metropolitan Excluding CBD Country Parts, Metropolitan Excluding CBD Metropolitan CBD Only, Other Towns, Other Towns Country Parts, Small Provincial Cities, Small Provincial Cities Country Parts, Small Towns, Small Towns Country Small Provincial Cities, Small Towns Metropolitan Excluding CBD, Small Towns Small Provincial Cities. "
+LGA_NAME_ALL ,Text ,250,"LGA_NAME_ALL is a character field contains the name of the Local Government Area (LGA) in which the crash occurred. In some cases where a crash occurred on a border, several LGA names will occur. Unincorporated areas (usually Alpine resorts) will occur in brackets. ",ALPINE to YARRIAMBIACK. 
+REGION_NAME_ALL ,Text ,250,"REGION_NAME_ALL is a character field contains the name of the VicRoads region in which the crash occurred. In some cases, where a crash occurred on a border, several VicRoads region names will occur. ","EASTERN REGION, METROPOLITAN NORTH WEST REGION, METROPOLITAN SOUTH EAST REGION, NORTH EASTERN REGION, NORTHERN REGION, SOUTH WESTERN REGION, WESTERN REGION. "
+SRNS ,Text ,1,"Road on which the crash occurred classified by the Statewide Route Numbering Scheme (SRNS). 'M' roads provide a consistent high standard of driving conditions, with divided carriageways, four traffic lanes, sealed shoulders and line marking that is easily visible in all weather conditions. 'A' roads provide a similar high standard of driving conditions on a single carriageway. 'B' roads are sealed roads, wide enough for two traffic lines, with good centre line and edge line marking, shoulders, and a high standard of guidepost delineation. 'C' roads are generally two lane sealed roads with shoulders. Other roads are not classified. ","M, A, B, C, blank. "
+SRNS_ALL ,Text ,10,Road on which the crash occurred classified by the Statewide Route Numbering Scheme (SRNS) with those occurring at junctions reflecting both types ,"M, A, B, C, blank. and combinations "
+RMA_ALL ,Text ,250,Road Management Act road classification. With crashes occurring at junctions of road types providing combinations of types. ,"Arterial Highway, Arterial Other, Freeway, Local Road, Non Arterial, Blank (not classified, recorded or known). "
+DIVIDED ,Text ,9,DIVIDED is a character field that should indicate whether the crash occurred on a divided portion of road. ,Undivided. 
+DIVIDED_ALL ,Text ,10,DIVIDED_ALL is a character field that should indicate whether the crash occurred on a divided portion of road. ,Undivided. 
+STAT_DIV_NAME ,Text ,40,STAT_DIV_NAME is a character field indicating the Metro Melbourne or Country region where the crash occurred. ,"Metro, Country. "
+RMA ,Text ,255,Road Management Act (2004) classification ,(FW) Freeway / (AH) Arterial - Highway / (AO) Arterial - other / (LO) Local road / (NR) Non-Arterial State road / (RO) Roads Other / (PR) Committed Proposed road 
+ALCOHOLTIME ,Text ,80,Incidents occurred within Road Crash Information System Definition of Alcohol Times ,Alcohol Times are defined as the following: • Monday – Thursday 00:00-06:00 hours & 18:00-2359 hours • Friday 00:00-06:00 hours & 16:00-23:59 hours • Saturday 00:00-08:00 hours & 14:00-23:59 hours • Sunday 00:00-10:00 hours & 16:00-23:59 hours. 
+LATITUDE ,Text ,100,Geographical coordinates ,  

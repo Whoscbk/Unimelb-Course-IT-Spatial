@@ -1,0 +1,69 @@
+Trajectory 1's length is 6057.31m.
+The length of its longest segment is 1458.35m, and the index is 5.
+The average sampling rate for the trajectory is 3317.00s.
+For the segment index 2, the minimal travel speed is reached.
+For the segment index 1, the maximum travel speed is reached.
+----
+Trajectory 2's length is 4607.12m.
+The length of its longest segment is 923.98m, and the index is 14.
+The average sampling rate for the trajectory is 572.14s.
+For the segment index 2, the minimal travel speed is reached.
+For the segment index 14, the maximum travel speed is reached.
+----
+Trajectory 3's length is 7820.36m.
+The length of its longest segment is 1279.20m, and the index is 1.
+The average sampling rate for the trajectory is 672.95s.
+For the segment index 7, the minimal travel speed is reached.
+For the segment index 1, the maximum travel speed is reached.
+----
+Trajectory 4's length is 3198.76m.
+The length of its longest segment is 1032.01m, and the index is 13.
+The average sampling rate for the trajectory is 567.86s.
+For the segment index 2, the minimal travel speed is reached.
+For the segment index 13, the maximum travel speed is reached.
+----
+Trajectory 5's length is 8805.58m.
+The length of its longest segment is 1171.06m, and the index is 6.
+The average sampling rate for the trajectory is 4232.54s.
+For the segment index 2, the minimal travel speed is reached.
+For the segment index 6, the maximum travel speed is reached.
+----
+Trajectory 6's length is 7268.46m.
+The length of its longest segment is 1086.98m, and the index is 9.
+The average sampling rate for the trajectory is 2619.36s.
+For the segment index 12, the minimal travel speed is reached.
+For the segment index 9, the maximum travel speed is reached.
+----
+Trajectory 7's length is 5370.73m.
+The length of its longest segment is 769.97m, and the index is 4.
+The average sampling rate for the trajectory is 3428.10s.
+For the segment index 8, the minimal travel speed is reached.
+For the segment index 4, the maximum travel speed is reached.
+----
+Trajectory 8's length is 113929.19m.
+The length of its longest segment is 10611.70m, and the index is 18.
+The average sampling rate for the trajectory is 949.86s.
+For the segment index 80, the minimal travel speed is reached.
+For the segment index 18, the maximum travel speed is reached.
+----
+Trajectory 9's length is 31751.15m.
+The length of its longest segment is 5964.39m, and the index is 7.
+The average sampling rate for the trajectory is 780.62s.
+For the segment index 4, the minimal travel speed is reached.
+For the segment index 7, the maximum travel speed is reached.
+----
+Trajectory 10's length is 67768.93m.
+The length of its longest segment is 10148.92m, and the index is 12.
+The average sampling rate for the trajectory is 1323.64s.
+For the segment index 21, the minimal travel speed is reached.
+For the segment index 12, the maximum travel speed is reached.
+----
+Trajectory 11's length is 64061.23m.
+The length of its longest segment is 9986.45m, and the index is 9.
+The average sampling rate for the trajectory is 2956.56s.
+For the segment index 18, the minimal travel speed is reached.
+For the segment index 9, the maximum travel speed is reached.
+----
+The total length of all trajectories is 320638.81m.
+The index of the longest trajectory is 8, and the average speed along the trajectory is 0.85m/s.
+Program complete
