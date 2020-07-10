@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>GEOM90018 Spatial Database. A4: Project</title>
+  <meta name="Author" content="Matt Duckham">
+  <meta name="Description" content="Spatial Databases Practical on spatial analysis">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1344.72">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    li.li4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {-webkit-text-stroke: 0px #000000}
+    ol.ol1 {list-style-type: decimal}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: circle}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><b>GEOM90018 Spatial Database. A4: Putting it all together...</b></span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Objectives</b></span></h3>
+<p class="p3"><span class="s1">By the end of this practical you should be able to:<span class="Apple-converted-space">&nbsp;</span></span></p>
+<ol class="ol1">
+  <li class="li4"><span class="s2"></span><span class="s1">design your own solutions to realistic spatial and spatiotemporal analysis problems;<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">combine multiple spatial operations together to support an investigation of a large spatial data set;<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">present the results of your investigation using a spatial database clearly and carefully.<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ol>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Overview</b></span></h3>
+<p class="p3"><span class="s1">Where previous practicals have asked you to find the solution to well-specified problems, this practical asks you to design a solution to investigate more open-ended problems - as a data analyst. You will use as the focus for your investigation the table "checkins", possibly n conjunction with any other data in the "spatial" schema. The table contains the time (date, time), location (geom), user id (uid), location id (poi) of approximately 6M checkins made by Gowalla (social network) users between Feb 2009 and Oct 2010. The table "friends" also contains the friend associations between Gowalla users identified in the check-ins.&nbsp;</span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>OSM and hstore</b></span></h3>
+<p class="p3"><span class="s1">
+For this assignment, you may also use the newly imported OpenStreetMap (OSM) dataset of Melbourne region, downloaded from <a href="https://download.bbbike.org/osm/bbbike/Melbourne/"> bbbike.org</a> on 1 May 2019. The data was imported into the geom90018 PostgreSQL database using the <a href="https://www.volkerschatz.com/net/osm/osm2pgsql-usage.html">osm2pgsql</a> tool. The data is stored into 7 tables whose names start with "melbourne_osm_" (melbourne_osm_nodes, melbourne_osm_point, melbourne_osm_polygon, melbourne_osm_rels, melbourne_osm_roads, melbourne_osm_ways), all of which are located in schema "spatial". It is advisable that you read about the <a href="https://wiki.openstreetmap.org/wiki/Elements">OSM elements</a> in order to understand how OSM models real world objects with nodes, ways, and polygons, and how it uses tags to record their attributes. Since tags are in fact key-value pairs, they cannot be represented with the data types we have previously used in postgresql (e.g. integer, varchar, or geometry). Instead, they can be stored into <a href="https://www.postgresql.org/docs/10/hstore.html">hstore</a> data type, which is available as an extension to the PostgreSQL database. Hstore allows users to store multiple key-value pairs into a single column, and do some operations on them (examples of some operations are shown below, and you can see the whole list in the hstore documentation website). When working with these tables keep in mind the following things:
+<ul class="ul/iden1">
+  <li class="li4"><span class="s2"></span><span class="s1">Nodes, ways, and rels tables are the direct representation of what is stored in the OSM databases. These tables are stored in our database without hstore columns for tags, and without geometry columns. You may still use these tables in your analysis if you want to.</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">Point, line, polygon, and roads tables are abstracted from data in the nodes, ways and rels tables by the osm2pgsql tool (there has been some processing done on these tables in order to adapt them to and make them usable in a PostgreSQL database). These tables are stored in our database with hstore "tags" columns, and geometry "way" columns. Also keep in mind that these geometries are stored in the WGS 84 / Pseudo-Mercator (EPSG:3857).</span></li>
+</ul>
+
+Here are some examples of how you can get familiar with the new OSM data:
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background: whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT ST_SRID(way) FROM spatial.melbourne_osm_point LIMIT 1;<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background: whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT tags->'building', way FROM spatial.melbourne_osm_polygon WHERE tags?'building';<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background: whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT tags->'building' as building, count(*) FROM spatial.melbourne_osm_polygon WHERE tags?'building' GROUP BY tags->'building' ORDER BY count DESC;<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background: whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family: &quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT osm_id, (each(tags)).key, (each(tags)).value FROM spatial.melbourne_osm_polygon WHERE tags?'building' LIMIT 100;<o:p></o:p></span></p>
+</div>
+&nbsp;</span></p>
+
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Assessment A4: Advanced Spatial and Spatiotemporal Analysis</b></span></h3>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Preliminaries</b></span></h4>
+<ol class="ol1">
+  <li class="li4"><span class="s2"></span><span class="s1">This assignment is worth 16% of your final class mark.</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">The due date for the assignment is clearly stated on course web site, accessible via Canvas. <br>
+</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">NO LATE ASSIGNMENTS WILL BE ACCEPTED. It is your responsibility to ensure you are aware of the assignment due date posted on the course web site.<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ol>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Assignment</b></span></h4>
+<p class="p3"><span class="s1">Your task is to perform some analysis of this data set: to pose - and answer - some question of your choosing or reveal some interesting patterns in the data. Examples of possible analyses might include (but are not limited to):&nbsp;</span></p>
+<ul class="ul/iden1">
+  <li class="li4"><span class="s2"></span><span class="s1">Identifying interesting spatial clusters of check-ins, such as the pattern of "footprints" of check-ins for each user, for a given region;</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">Examining the relationship between the friend network and the spatial location of check ins, such as answering the question of whether friend network distance and spatial distance between check-ins are correlated; or</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">Looking for spatiotemporal trends in the patterns of check-ins, such as identifying whether certain locations or points of interest are tending to increase or decrease in popularity over time.&nbsp;</span></li>
+</ul>
+<p class="p4"><span class="s1">You are strongly encouraged to develop your own analyses however, and not rely on these indicative suggestions. You can support your motivation by literature or current events (such as COVID-19) and then, reference these properly.</span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Submission</b></span></h4>
+<p class="p4"><span class="s1">You must submit two files in one <b>zipped archive</b> as your assignment:<span class="Apple-converted-space">&nbsp;</span></span></p>
+<ol class="ol1">
+  <li class="li4"><span class="s2"></span><span class="s1">Your plain text SQL script, which performs all of the steps necessary to perform your analysis. Your SQL script must be&nbsp;named &lt;studentno&gt;.txt (or .sql) where &lt;studentno&gt; is your student number.&nbsp;This should also be the name of your zipped archive.</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">A one-page PDF summary of your analysis. Your PDF summary must be&nbsp;named &lt;studentno&gt;.pdf where &lt;studentno&gt; is your student number.&nbsp;The format of this PDF summary is flexible, but it must at least include:&nbsp;</span></li>
+  <ul class="ul2">
+    <li class="li4"><span class="s2"></span><span class="s1">A clear, short statement of the problem your script solves or analysis your script performs;</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">A clear, short motivation for your problem or analysis, why your analysis is interesting;<span class="Apple-converted-space">&nbsp;</span></span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">A clear, short summary of the key steps used to complete your analysis, highlighting in particular the most important, challenging, or original parts of your solution;&nbsp;</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">A clear, short summary of the key results, i.e., what your analysis shows; and</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">One or two images that summarizes your results (e.g., a map or perhaps a data graphic or chart, depending on your chosen analysis - note the usual requirements for data presentation apply).<span class="Apple-converted-space">&nbsp;</span></span></li>
+  </ul>
+</ol>
+<p class="p4"><span class="s1">You must submit your files online using the course web site (accessible via Canvas. No other submission method is acceptable.<span class="Apple-converted-space">&nbsp;</span></span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Marking</b></span></h4>
+<ul class="ul1">
+  <li class="li4"><span class="s2"></span><span class="s1">Your submission will be marked out of <b>16</b>. <br>
+</span></li>
+  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Marks</b> will be <b>deducted</b> for any incorrect submissions (e.g., using a Word or HTML document instead of a plain text SQL file or PDF summary; SQL scripts that contain non-SQL parts, or fail to execute directly when marked, or require adaptation or editing to run).&nbsp;</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">Marks will be allocated in four areas:</span></li>
+  <ul class="ul2">
+    <li class="li4"><span class="s2"></span><span class="s1">Presentation (up to 3 marks): reflecting the clarity and care of presentation of the submission (of both the SQL script and the PDF submission, and taking care of good practices in data (geo)visualization).&nbsp;</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">Technical correctness (up to 3 marks): reflecting the technical correctness of your SQL script and the design of your analysis procedure. &nbsp;</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">Technical challenge (up to 5 marks): reflecting the level of technical challenge of the analysis, for example that combine geometric, topological, thematic, and even network operations.&nbsp; Creativity in your tools’ selection is highly encouraged, as is ’thinking outside the box’. In other words, if you acquired appropriate skills from other subjects, you can incorporate them in your work, but the emphasis still needs to be on the operations learned in this subject. You are encouraged to explore functions of PostGis we have not explored, including advanced ones (i.e., Raster data handling, etc)</span></li>
+    <li class="li4"><span class="s2"></span><span class="s1">Originality and significance (up to 5 marks): reflecting the care and attention that has gone into developing an interesting and novel question to answer, problem to solve, or pattern to reveal.</span></li>
+  </ul>
+</ul>
+<p class="p4"><span class="s1">Some other points to note:<span class="Apple-converted-space">&nbsp;</span></span></p>
+<ul class="ul1">
+  <li class="li4"><span class="s2"></span><span class="s1">You may have more than one SQL statement in your script (e.g., you may have multiple SELECT, UPDATE, INSERT, or CREATE statements, if perhaps your script creates new tables which later parts of your analysis use). However, your SQL script must execute as a single process without any interaction or editing by the marker. &nbsp;</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">You may also include other data, in addition to the check-ins and friend network data, in your analysis, on condition it is either already in the class database (e.g., US states data sets) or you include additional data as part of your SQL script (i.e., using CREATE TABLE and INSERT INTO statements). If you include additional data or create new tables, you must also include in your script statements to DROP any tables created at the end of the script (if necessary, commented out so the marker can still easily remove new tables after marking your script).<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">You are not required to use the entire check-ins/friend network (indeed, you may prefer not to use all 6M records). It is only required that you use the checkin data set to discover something new or answer an important problem.&nbsp;The "checkins_small" table has been created with a subset of 100,000 records from the "checkins" table, in case you wish to try out ideas on a smaller table. Your entire script must execute in a reasonable amount of time (i.e., less than 2-3 minutes).<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">You need to include comments in your SQL script (correctly formatted, preceded by the "--" comment ). Good quality comments increase the clarity of your script and will improve your marks in the "Presentation" category.&nbsp;</span></li>
+  <li class="li4"><span class="s2"></span><span class="s1">If you are stuck in thinking of a good analysis, spend a little time just looking at (some of) the data (perhaps in QGIS). What sorts of patterns suggest themselves? You might also approach the assignment from the opposite direction by thinking first about the technical challenge (the most important marking criterion): what combinations of geometric, topological, thematic and network operations (and potentially others) could you imagine might lead to interesting results.</span></li>
+</ul>
+
+
+</body></html>

@@ -1,0 +1,62 @@
+BingKun Chen
+Q1
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'us_cities';
+
+Q2
+SELECT c.city, c.pop90
+FROM spatial.us_cities AS c
+WHERE c.pop90 > 700000 AND c.pop90 < 1000000
+ORDER BY c.city ASC;
+
+Q3
+SELECT AVG(c.pop90)
+FROM spatial.us_cities AS c
+WHERE c.state_abrv = 'NY';
+
+Q4
+SELECT s.state
+FROM spatial.us_states AS s
+WHERE s.age65_up > (0.75 * s.age0_17);
+
+Q5
+SELECT c.city, s.state
+FROM spatial.us_cities AS c
+INNER JOIN spatial.us_states AS s
+ON c.state_abrv = s.state_abrv
+WHERE c.city LIKE '%land'
+ORDER BY s.state DESC;
+Q6
+SELECT s.state, MIN(c.rank90) AS highest_rank, MAX(c.rank90) AS lowest_rank
+FROM spatial.us_cities AS c
+INNER JOIN spatial.us_states AS s
+ON c.state_abrv = s.state_abrv
+GROUP BY s.state
+ORDER BY s.state ASC;
+
+Q7
+SELECT c.city
+FROM spatial.us_cities AS c
+INNER JOIN spatial.us_states AS s
+ON c.state_abrv = s.state_abrv
+WHERE c.rank90 > 0 AND c.rank90 <= 10 
+AND s.totpop NOT IN (SELECT t.totpop 
+		FROM spatial.us_states AS t 
+		ORDER BY t.totpop DESC
+		LIMIT 10);
+
+Q8
+CREATE TABLE mycities
+(city VARCHAR(32),
+pop90 INT)
+
+Q9
+INSERT INTO mycities
+SELECT c.city, c.pop90
+FROM spatial.us_cities AS c
+WHERE c.rank90 <= 20 
+AND c.rank90 > 0;
+
+Q10
+DROP TABLE mycities

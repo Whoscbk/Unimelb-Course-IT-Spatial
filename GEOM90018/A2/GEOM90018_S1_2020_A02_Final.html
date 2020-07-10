@@ -1,0 +1,1567 @@
+
+<!-- saved from url=(0129)https://app.lms.unimelb.edu.au/bbcswebdav/pid-6921289-dt-content-rid-45954912_2/courses/GEOM90018_2019_SM1/GEOM90018_A2_2018.html -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 14">
+<meta name="Originator" content="Microsoft Word 14">
+<link rel="File-List" href="https://app.lms.unimelb.edu.au/bbcswebdav/pid-6921289-dt-content-rid-45954912_2/courses/GEOM90018_2019_SM1/Practical_2_2016_files/filelist.xml">
+<title>GEOM90018 Spatial Database.P3: Spatial Analysis</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Oleksii Vedernikov</o:Author>
+  <o:LastAuthor>Shima Rahmatizadeh</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>32</o:TotalTime>
+  <o:Created>2015-04-16T07:19:00Z</o:Created>
+  <o:LastSaved>2016-04-11T23:42:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>1411</o:Words>
+  <o:Characters>8046</o:Characters>
+  <o:Company>The University of Melbourne</o:Company>
+  <o:Lines>67</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9439</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel="themeData" href="https://app.lms.unimelb.edu.au/bbcswebdav/pid-6921289-dt-content-rid-45954912_2/courses/GEOM90018_2019_SM1/Practical_2_2016_files/themedata.thmx">
+<link rel="colorSchemeMapping" href="https://app.lms.unimelb.edu.au/bbcswebdav/pid-6921289-dt-content-rid-45954912_2/courses/GEOM90018_2019_SM1/Practical_2_2016_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>140</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-AU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<link rel="Stylesheet" type="text/css" media="all" href="./GEOM90018_A2_2019_files/teaching.css">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1593833729 1073750107 16 0 415 0;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-believe-normal-left:yes;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-line-height-alt:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:30.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-line-height-alt:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	border:none;
+	mso-border-bottom-alt:solid #999999 .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:24.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	border:none;
+	mso-border-bottom-alt:dotted #999999 .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:18.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h5
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 5 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#000066;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#666666;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 4";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;
+	font-style:italic;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 5";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#243F60;
+	mso-themecolor:accent1;
+	mso-themeshade:127;}
+p.info, li.info, div.info
+	{mso-style-name:info;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:#FFFDE3;
+	border:none;
+	mso-border-alt:solid #E5E1A9 .75pt;
+	padding:0cm;
+	mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.note, li.note, div.note
+	{mso-style-name:note;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin:24.0pt;
+	mso-pagination:widow-orphan;
+	background:#EEEEEE;
+	border:none;
+	mso-border-top-alt:solid #CCCCCC .75pt;
+	mso-border-bottom-alt:solid #CCCCCC .75pt;
+	padding:0cm;
+	mso-padding-alt:6.0pt 0cm 6.0pt 0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-style:italic;}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.demolink, li.demolink, div.demolink
+	{mso-style-name:demolink;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.example, li.example, div.example
+	{mso-style-name:example;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin:12.0pt;
+	mso-pagination:widow-orphan;
+	background:whitesmoke;
+	border:none;
+	mso-border-alt:solid #CCCCCC .75pt;
+	padding:0cm;
+	mso-padding-alt:6.0pt 6.0pt 6.0pt 6.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.field, li.field, div.field
+	{mso-style-name:field;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:#EEEEEE;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:212467716;
+	mso-list-template-ids:-1973268582;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:474760640;
+	mso-list-template-ids:1130519998;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:646129970;
+	mso-list-template-ids:367581462;}
+@list l2:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:646741270;
+	mso-list-template-ids:-248581012;}
+@list l3:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4
+	{mso-list-id:1207335262;
+	mso-list-template-ids:-1774835160;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:1487405297;
+	mso-list-template-ids:-1174622442;}
+@list l5:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6
+	{mso-list-id:1580872638;
+	mso-list-template-ids:1636073338;}
+@list l6:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if mso 9]-->
+<style>
+p.MsoNormal
+	{margin-left:12.0pt;}
+</style>
+<!--[endif]-->
+<meta content="Matt Duckham" name="author">
+<meta content="Spatial Databases Practical on spatial analysis" name="description">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang="EN-AU" link="#000066" vlink="#666666" style="tab-interval:36.0pt;
+margin-left:12.0pt;margin-top:12.0pt;margin-right:12.0pt;margin-bottom:12.0pt" data-gr-c-s-loaded="true">
+
+<div class="WordSection1">
+
+<div style="mso-element:para-border-div;border:none;border-bottom:solid #999999 1.0pt;
+mso-border-bottom-alt:solid #999999 .75pt;padding:0cm 0cm 1.0pt 0cm">
+
+<h2><span lang="EN" style="mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:
+EN">GEOM90018 Spatial Database.P2: Spatial Analysis<o:p></o:p></span></h2>
+
+</div>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Objectives<o:p></o:p></span></h3>
+
+</div>
+
+<p style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-ansi-language:EN">By the end of this practical you should be able to: <o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">retrieve
+     information about objects based on their spatial properties and relations;
+     and<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt"><span class="SpellE"><span class="GramE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+     mso-ansi-language:EN">analyse</span></span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+     mso-ansi-language:EN"> spatial relations of several objects.<o:p></o:p></span></li>
+</ol>
+
+<p class="MsoNormal" style="margin:0cm;margin-bottom:.0001pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">This practical should require <i>two weeks</i> to
+complete. <o:p></o:p></span></p>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Overview<o:p></o:p></span></h3>
+
+</div>
+
+<p style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-ansi-language:EN">This practical will introduce you to more advanced
+spatial analysis in SQL. We will use the spatial capabilities of <span class="SpellE">PostGIS</span> spatial DBMS to perform spatial operations and
+analysis on the sample data from the US Census Bureau and the Digital Chart of
+the World.<o:p></o:p></span></p>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Exercise P2.1: Spatial Analysis&nbsp;<o:p></o:p></span></h3>
+
+</div>
+
+<p style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-ansi-language:EN">In the previous <span class="SpellE">practicals</span> you
+should have learned how to determine the basic properties of (mostly) a single
+spatial object, and perform some simple geometric operations upon those objects
+(e.g., distances). In the following <span class="SpellE">excercise</span> we will
+<span class="SpellE">analyse</span> spatial relations of multiple objects of
+different types (polygons, lines, and points). The term "spatial
+join" refers to performing a relational join on tables based on some
+spatial criterion.&nbsp;<o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Nearest
+     neighbor</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">: In a
+     previous practical you found the 10 closest restaurants to a particular <span class="SpellE">restuarant</span> using the <span class="SpellE">ST_Distance</span>
+     function (with a nested SELECT statement). However, it is also possible to
+     use the "&lt;-&gt;" <span class="SpellE">PostGIS</span> operator
+     to perform the same query. The &lt;-&gt; operator returns the distance
+     between two points, or the distance between the <em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">bounding boxes </span></em>of
+     two line or polygonal geometries. Find the 10 closest restaurants to 'KUNG
+     FU PIZZA' using the following template (nearest neighbor operator):<o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT a.name FROM a, b WHERE ... ORDER
+BY <span class="SpellE">a.geom</span> &lt;-&gt; <span class="SpellE">b.geom</span>
+limit 10;<o:p></o:p></span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">Compare your answer with the result of the nested query
+technique from the earlier practical. By changing the limits in this query, we
+can find the <em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">k</span></em>
+nearest&nbsp;neighbors to our point, referred to as the <i>k</i>-nearest <span class="GramE">neighbors</span> problem. <o:p></o:p></span></p>
+
+<ol start="2" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Closest
+     interstate</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">: Now try
+     to use the techniques you have already learned above to select the
+     interstate (highway) closest to the KUNG FU PIZZA restaurant. Compare
+     these results with your approach using the <span class="SpellE">ST_Distance</span>
+     function. What do you notice? Why are they different? Recall that the
+     &lt;-&gt; operator is only an (over) estimate of the distance between
+     geometries that involve polylines or polygons. Nevertheless, this can
+     still be useful, especially for efficient queries (as the &lt;-&gt;
+     operator can use spatial indexes, <span class="SpellE">ST_Distance</span>
+     cannot). There are a number of other <span class="SpellE">PostGIS</span>
+     operators that use the bounding box of geometries, including intersection
+     (&amp;&amp;), containment (@), and direction (&lt;&lt;, &lt;&lt;|,
+     &gt;&gt;, |&gt;&gt;). Look up the documentation for these operators and
+     try some queries using them. <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Aggregation
+     of results: </span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Determine
+     the total area in square miles of US states with a population of more than
+     15 million people. You will select spatial objects based on non-spatial
+     attributes and determine a joint spatial property. Use the&nbsp;SUM
+     operator together with the <span class="SpellE">ST_Area</span> function to
+     get the total value. <o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT <span class="GramE">SUM(</span>expression)
+FROM ...<o:p></o:p></span></p>
+
+</div>
+
+<ol start="4" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological
+     operation</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN"> #1: We
+     want to find the names of restaurants within Maryland, using a spatial
+     operation. We want only restaurants lying within Maryland, based on the
+     geometry of the outline of Maryland. This can be achieved using the <span class="SpellE">ST_Contains</span> <span class="SpellE">fuinction</span> in a
+     restriction to an SQL query. The function returns true if <span class="SpellE">a.geom</span> contains <span class="SpellE">b.geom</span>. <o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">St_<span class="GramE">Contains</span></span></span><span class="GramE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">(</span></span><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">a.geom</span></span><span lang="EN" style="font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:
+EN">, <span class="SpellE">b.geom</span>)<o:p></o:p></span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">ST_Contains</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN"> is just one of a set of operations for determining the
+topological relations between geometries. These include the other seven
+4-intersection operations: <o:p></o:p></span></p>
+
+<ol start="4" type="1">
+ <ul type="circle">
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Within</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Covers</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"> <o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_CoveredBy</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Equals</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Disjoint</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Overlaps</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="margin-bottom:12.0pt;line-height:16.8pt;
+      mso-list:l3 level2 lfo2;tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+      &quot;Times New Roman&quot;;mso-ansi-language:EN">ST_Touches</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+      &quot;Times New Roman&quot;;mso-ansi-language:EN"><br>
+      <br>
+      In addition, other related topological operations are also available,
+      such as: <o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Crosses</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level2 lfo2;
+      tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:
+      &quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN">ST_Intersects</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+      mso-ansi-language:EN"><o:p></o:p></span></li>
+  <li class="MsoNormal" style="margin-bottom:12.0pt;line-height:16.8pt;
+      mso-list:l3 level2 lfo2;tab-stops:list 72.0pt"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+      &quot;Times New Roman&quot;;mso-ansi-language:EN">ST_Relate</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+      &quot;Times New Roman&quot;;mso-ansi-language:EN"><o:p></o:p></span></li>
+ </ul>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> <i>operation #2</i>:&nbsp;Find
+     all the interstates and rivers that cross (<span class="SpellE">anyinteract</span>)
+     the state of New York.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> <i>operation #3</i>:&nbsp;Find
+     all the states that border (touch) the state of New York.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> <i>operation #4</i>: Retrieve the
+     name of the US state in which the "<span class="SpellE">Wah</span> <span class="SpellE">Mee</span> Restaurant" is located (contained), based on
+     the coordinates of its location. <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> <i>operation #5</i>: List all the
+     states which the "I95" interstate passes through.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological
+     operation #6</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">: List all
+     the interstates which cross the "Potomac" river.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Topological</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> <i>operation #7</i>:&nbsp;Find
+     all the US states that border (touch) exactly one other US state. (This is
+     quite tricky!)<o:p></o:p></span></li>
+</ol>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Exercise P2.2: Retrieving coordinate
+information<o:p></o:p></span></h3>
+
+</div>
+
+<p class="MsoNormal" style="margin:0cm;margin-bottom:.0001pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">It is possible to retrieve some of the coordinates of
+spatial objects in a straightforward way: <o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="margin-bottom:12.0pt;line-height:16.8pt;mso-list:
+     l2 level1 lfo3;tab-stops:list 36.0pt"><span class="SpellE"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+     mso-ansi-language:EN">Retrive</span></i></span><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+     mso-ansi-language:EN"> coordinate information</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+     mso-ansi-language:EN">: It is possible to retrieve the coordinates of <span class="GramE">a point</span> geometry in a straightforward way. List the <span class="SpellE">lat</span>, long values of restaurants within Maryland <span class="GramE">state</span> in a table <span class="SpellE">containing</span>
+     columns NAME, X, Y. The general pattern of the query function for the
+     coordinates x is:<o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">SELECT ST_<span class="GramE">X(</span><span class="SpellE">pointgeom</span>), ST_Y(<span class="SpellE">pointgeom</span>) FROM
+table ...;<o:p></o:p></span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">We have already encountered in earlier <span class="SpellE">practicals</span> the related functions for retrieving the x and y
+coordinates of the bounding box of <span class="GramE">a polyline</span> or
+polygon geometry. Refresh your memory by <span class="SpellE">retriving</span>
+the maximum and minimum x and y coordinates of the bounding boxes of the three
+longest rivers in the <span class="SpellE">spatial.us_rivers</span> table. <o:p></o:p></span></p>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Exercise P2.2: Overlay operations<o:p></o:p></span></h3>
+
+</div>
+
+<p class="MsoNormal" style="margin:0cm;margin-bottom:.0001pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">As well as using the topological operations to find the
+relationship between two spatial objects, we can combine spatial objects into
+new objects using set-based operators, like intersection, union, and
+difference. <o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l1 level1 lfo4;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Union</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN">: The union of two geometries can
+     be constructed using the <span class="SpellE">ST_Union</span> function, with
+     the template below. Create the region that is the union of France and
+     Germany.&nbsp; Output the <span class="SpellE">lat</span>/long coordinates
+     of the centroid of the union of France and Germany. <o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">ST_<span class="GramE">Union</span></span></span><span class="GramE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">(</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">geometry1,
+geometry2); <o:p></o:p></span></p>
+
+</div>
+
+<ol start="2" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l1 level1 lfo4;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Intersection</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> #1: The intersection of two
+     geometries can be constructed using a similar function, as below. Find the
+     intersection of the "I81" and the "St. Lawrence"
+     river. <o:p></o:p></span></li>
+</ol>
+
+<div style="border:solid #CCCCCC 1.0pt;mso-border-alt:solid #CCCCCC .75pt;
+padding:6.0pt 6.0pt 6.0pt 6.0pt;margin-left:12.0pt;margin-top:12.0pt;
+margin-right:12.0pt;margin-bottom:12.0pt">
+
+<p class="MsoNormal" style="margin-left:36.0pt;line-height:16.8pt;background:
+whitesmoke"><span class="SpellE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">ST_<span class="GramE">Intersection</span></span></span><span class="GramE"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">(</span></span><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">geometry1,
+geometry2); <o:p></o:p></span></p>
+
+</div>
+
+<ol start="3" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l1 level1 lfo4;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Intersection</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> #2: Now find the restaurant that
+     is closest to the intersection of "I81" and the "St.
+     Lawrence" river (in one query). How far away is it (in miles)?<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l1 level1 lfo4;
+     tab-stops:list 36.0pt"><i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Intersection</span></i><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> #3: How far away from the
+     intersection of the "I81" and the "St. Lawrence" river
+     is the intersection of the "I66" and the Potomac?<br>
+     <br>
+     Note the other overlay functions in <span class="SpellE">PostGIS</span>
+     including <span class="SpellE">ST_SharedPaths</span>, <span class="SpellE">ST_SymDifference</span>,
+     and <span class="SpellE">ST_Split</span>. <o:p></o:p></span></li>
+</ol>
+
+<div style="mso-element:para-border-div;border:none;border-bottom:dotted #999999 1.0pt;
+mso-border-bottom-alt:dotted #999999 .75pt;padding:0cm 0cm 0cm 0cm">
+
+<h3 style="mso-line-height-alt:16.8pt"><span lang="EN" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN">Assessment A2: Spatial Analysis<o:p></o:p></span></h3>
+
+</div>
+
+<h4 style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Preliminaries<o:p></o:p></span></h4>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l5 level1 lfo5;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">This
+     assignment is worth 8% of your final class mark.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l5 level1 lfo5;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">The due
+     date for the assignment is clearly stated on course web site, accessible
+     via the LMS. <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l5 level1 lfo5;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">NO LATE
+     ASSIGNMENTS WILL BE ACCEPTED. It is your responsibility to ensure you are
+     aware of the assignment due date posted on the course web site. <o:p></o:p></span></li>
+</ol>
+
+<h4 style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Submission<o:p></o:p></span></h4>
+
+<p class="MsoNormal" style="margin:0cm;margin-bottom:.0001pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">Your task is to answer the 8 questions in the
+"assignment" section below. You must submit one plain text file
+(named &lt;<span class="SpellE">studentno</span>&gt;.txt or .sql, where &lt;<span class="SpellE">studentno</span>&gt; is your student number). The text file must
+contain exactly 8 (or less) executable statements, one single statement per question, in the correct order. Each line should contain only one SQL query.
+You must leave a comment (e.g., "-- No answer for Q3") in place of
+any questions you do not answer. We will accept SQL code formatted over multiple lines, as long as you respect the ";" convention to end the statement. You must submit your file online using the course web site (accessible via the LMS at http://www.lms.unimelb.edu.au). No
+other submission method is acceptable.  <o:p></o:p></span></p>
+
+<h4 style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Marking<o:p></o:p></span></h4>
+
+<ul type="disc">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l4 level1 lfo6;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Your
+     submission will be marked out of <b>8</b>, with up to one mark awarded per
+     question. <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l4 level1 lfo6;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">A perfect
+     answer will be awarded <b>1 mark</b>. A near-perfect answer (almost
+     exactly right, but perhaps with some slight mistake or missing step) may
+     be awarded <b>half a mark</b>. Anything else will be awarded <b>0 marks</b>.
+     <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l4 level1 lfo6;
+     tab-stops:list 36.0pt"><b><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Marks</span></b><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+     &quot;Times New Roman&quot;;mso-ansi-language:EN"> will be <b>deducted</b> for any
+     incorrect submissions (e.g., using a Word or HTML document instead of a
+     plain text file; files that contain other than 8 answers with one answer
+     or comment per line; answers not in the correct order; answers that
+     contain non-SQL parts, such as question numbers, or characters, such as
+     double quotation " marks instead of single quotation ' marks, answers
+     that provide more information, such as additional columns, than what is
+     asked in the query). <o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l4 level1 lfo6;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">It is not
+     possible to get negative marks (e.g., an assignment score of 1 out of 8
+     with 2 marks deducted for incorrect submission will be a final mark of 0,
+     not -1). <o:p></o:p></span></li>
+</ul>
+
+<h4 style="line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Assignment<o:p></o:p></span></h4>
+
+<p class="MsoNormal" style="margin:0cm;margin-bottom:.0001pt;line-height:16.8pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN">The questions you must answer for this assignment all
+concern the sample data that you should now be familiar with in the <span class="SpellE">practicals</span>. Your assignment is to provide SQL statements to
+answer to the following 8 questions (see "Submission" section above
+for more details). <o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     Find out which country in the world_countries table has the most neighbouring countries. Also find the lengths of the border this country shares with each of its neighbouring countries. Print out the name of the country, the name of the neigbouring country, and the length of the border between the country and the neighbouring country in km. Order the results by border length descending.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     Give the name and population density of the country that has the second longest border with Austria. Use the spatial geometry columns to determine the size of the borders and also in calculating the population density. (Population Density = Population / square kilometre).<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     The Earth can be divided into 5 geographical zones: the North frigid zone, the North temperate zone, the Torrid zone, the South temperate zone, and the South frigid zone. (More information <a href="https://en.wikipedia.org/wiki/Geographical_zone" target="_blank">here</a>). Your task is to find out how the Earth's landmass (i.e., total area of land) is divided across these zones. Print out the name of the zone, the percentage of Earth's landmass that is in that zone, and the number of countires that are in that zone for each of the 5 geographical zones. Keep in mind that the same country can be in multiple zones. Order your output by zones from north to south.
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     List the names of the three least populated states (in terms of population density) through which interstate I-80 passes through in USA. ("highways" are referred to as interstate in the United States). Use the spatial geometry columns when calculating the population density. (Population Density = Population / square kilometre).&nbsp;<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     There are 56 entries in the us_states table. Many of these states share borders with their neighbouring states. Find out how many borders between states are 0-dimensional (i.e., two neighbouring states are sharing a point border) and how many borders are 1-dimensional (i.e., two neighbouring states are sharing a line border). Your result should only report these two numbers. Be careful not to count the same border twice!.&nbsp;<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     For all the interstate systems in USA, list the top 3 interstates that share a common segment between them, in terms of the length of their shared segment. Each pair of these interstate's should be listed only once. Present the results as Interstate Pair Name and Length of the shared segment in kilometres (2 decimal places), ordered by Interstate Name Pair. NOTE: The "us_interstates" table has data for shared segments between certain interstates defined (such as I15/I84, I15/I90, I40/I24 etc), in addition to the full interstates . Ignore these shared segments when calculating the output and consider only the full interstates (such as I16, I17 etc).<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     Imagine that you have a client who works in urban planning. Your client is interested in using OpenStreetMap as a source of building footprint data in Melbourne. Your job is to perform the assessment of the buildings data in the melbourne_osm_polygon table. However, because OSM data is produced by volunteers, you are aware that the tracing of buildings might not be performed accurately. Poor tracing leads to problems such as overlapping building geometries. Report the total number of buildings, the number of buildings that need to be retraced because they overlap other buildings, the number of distinct types of buildings (i.e., the type of building is recorded in the 'building' column), and the minimum, maximum and average areas of buildings in the data set.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">
+     List all the countries in alphabetical order, that shares its border with only 1 other country in the world.<o:p></o:p></span></li>
+</ol>
+
+</div>
+
+
+
+<span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span>
+
+</body></html>

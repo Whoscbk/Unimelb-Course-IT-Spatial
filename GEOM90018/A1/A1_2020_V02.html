@@ -1,0 +1,459 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0126)https://app.lms.unimelb.edu.au/bbcswebdav/pid-6921284-dt-content-rid-45953366_2/courses/GEOM90018_2019_SM1/A1_2018%282%29.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>GEOM90018 Spatial Database.P1: Using a spatial database</title>
+
+
+<link rel="stylesheet" href="./A1_2019_files/teaching.css">
+
+
+  <meta content="Martin Tomko" name="author">
+
+  <meta content="Spatial Databases Practical on using a spatial database" name="description">
+
+</head>
+
+
+<body>
+
+<div id="content">
+<h2>GEOM90018 Spatial Databases - A1: Geomatrical queries</h2>
+
+<h3>Objectives</h3>
+
+<p>By the end of this practical you should be able to: </p>
+
+<ol>
+
+  <li>understand  spatial data types; <br>
+
+  </li>
+
+  <li>retrieve information about objects based on their spatial
+properties; and</li>
+
+  <li>create new spatial data.</li>
+
+</ol>
+
+This practical should require <span style="font-style: italic;">two
+weeks</span> to complete. <br>
+
+<h3>Overview</h3>
+
+<p>This practical will introduce you to the basics of spatial analysis in SQL. We will use the spatial capabilities of PostGIS DBMS to perform basic spatial operations on the sample data from the US Census Bureau, the Digital Chart of the World, and some data created by yourself. In addition to pgAdmin, we encourage you to try other clients, such as HeidiSQL, an open-source DB SQL client, so you can get to try out different options.</p>
+
+<h3>Exercise P1.1: Viewing spatial data</h3>
+
+<p>A spatial DBMS like PostGIS has no spatial data viewing capabilities. Indeed, one of the reasons why spatial DBMS are such powerful systems is that, unlike GIS software packages, a spatial DBMS treats the storage, querying, and management of spatial data as completely separate functions from viewing that data. However, when learning about any spatial database it is often helpful to be able to display the data you are using graphically. There are many different ways that you can view data in a spatial database, including linking it to GIS software packages like QGIS (an open-source desktop GIS) or ArcGIS.
+</p>
+<ol>
+<p>
+1. Start QGIS, available from the menu on most lab computers, or downloadable from http://www.qgis.org/ for most common platforms. Note that MAC users need to install a separate GDAL (complete) package - available as a simple installer. Check IE Department folder if QGIS is not available on the general menu on the Lab computers.<br>
+2.	Connect to the database: To view any spatial data,&nbsp;QGIS&nbsp;first requires information about the connection to a spatial DBMS server. Under the Layer menu, select "Add PostGIS layer". Clicking on the "New" button in the Connections menu allows you to create a new connection, using the information settings you used in the previous practical. <br>
+    - The name can be anything you want (e.g., myconnection). <br>
+    - The host is: 172.26.88.92<br>
+    - The port is: 5432<br>
+    - The database is: geom90018<br>
+    - The username is: your LMS username <br>
+    - The password is: your LMS password </p>
+<p> 3.	Select data to view: The available tables should appear in the drop-down menu. You will currently only see tables from the schema "spatial". It is not your own schema, and you can only read those data. </p>
+  <p> 4.	Explore the data: Panning, zooming, changing the representation, and even some analysis functions are all available in QGIS. Have a look around the software and familiarize yourself with its GIS and database functions. I suggest you start by exploring tables containing US data from the Digital Chart of the World dataset, such as "us_cities","us_counties" and "us_restaurants"</p>
+  <p>Remember, QGIS is always there for you to allow you to graphically view, explore, and perform simple queries on data if you wish so. </p>
+  <br>
+
+</ol><h3>Exercise P1.2: Overview of spatial objects </h3>
+
+This exercise will shows you how to get overview information about
+a&nbsp;database's spatial data contents. You will retrieve information about the basic spatial properties of objects described by the database. The focus is on the
+geometry processing functions of the spatial database. We will use the US
+data from the Digital Chart of the World dataset.
+
+<ol>
+
+  <li><span style="font-style: italic;">Login to the
+course database server</span>.
+Log in to the server using the technique covered in the last
+practical.</li>
+
+  <li><span style="font-style: italic;">Get an
+    overview of the
+    available data</span>: List all the data attributed to the owner
+  "spatial" (this was covered in the last practical). Verify if
+    the&nbsp;following tables are present: world_continents,
+    world_countries, us_cities, us_interstates, us_parks, us_rivers,
+    us_states, us_restaurants.&nbsp;</li>
+
+  <li><span style="font-style: italic;">Attributes
+of the table containing spatial data</span>: Investigate the names of the columns containing attributes of the spatial data type for
+each of the tables listed above. Provide the answer in the form of a
+SELECT
+statement.
+<br> HINT1: The geometry columns in PostGIS are listed as type USER-DEFINED in the table "information_schema.tables".<br> HINT2: the table "geometry_columns" is a little more informative about the geometric data types in columns. </li>
+
+  <li><span style="font-style: italic;">Information
+about spatial
+coordinates</span>: We will find out some
+basic&nbsp;information about the coordinate systems used to store
+spatial objects. We will use
+the state of New York (us_states.state_abrv='NY') and other US states.</li>
+
+  <ol style="list-style-type: lower-alpha;">
+
+    <li><span style="font-style: italic;">Find out
+the type of the spatial object</span>: One of the most important
+pieces of information we need about a specific spatial object is what type of
+object it is (point, line, polygon, ...). Find out what is the spatial
+data typs of the state of New York. Use the
+following query template, based on the PostGIS function "GeometryType":
+      <div class="example">SELECT GeometryType(geom) FROM spatial.us_states;</div>
+
+Note the output of the geometry type. What is the relationship between the geometry type in the query above and that found previously in the "geometry_columns" table? Investigate this relationship more carefully by looking at other tables in the spatial schema. </li>
+
+    <li><span style="font-style: italic;">Find out
+the spatial reference system in which the geometry is defined</span>:
+The SRID is a code specifying in what coordinate system the
+spatial&nbsp;objects are stored. Find out what coordinate system
+Georgia's coordinates are stored in. What does this code mean? <br>
+
+      <div class="example">SELECT ST_SRID(geom) FROM spatial.us_states WHERE ...;</div>
+    </li>
+
+  </ol>
+
+  <li><span style="font-style: italic;">Information
+about spatial
+properties</span>: In addition to coordinates, we can find out a
+variety of spatial information for our spatial data. <br>
+
+    <span style="font-style: italic;"></span></li>
+
+  <ol style="list-style-type: lower-alpha;">
+
+    <li><span style="font-style: italic;">Compute
+area</span>s: Find
+the area of the US state of
+NY. HINT: to work with the geometries in PostGIS, you have to provide a
+spatial function and its parameter as arguments of the SELECT
+statement. The usual template is: <big><code>ST_FUNCTION
+(parameter1,parameter2,...)</code></big>. The basic area function
+looks like this: <br>
+
+      <div class="example">SELECT ST_Area(geometry_column) FROM ...</div>
+
+Look up on the web the documentation for <big><code>ST_Area</code></big>. Note that the function accepts a second argument, "use_spheroid". Investigate what this argument does, and what difference it makes to the answer. What are the units of your answer? Once you've got the area of New York, write a query
+to list the names of all US states, in descending order of area
+(largest first). What is the fourth largest state?<br>
+
+    </li>
+
+    <li><span style="font-style: italic;">Compute
+perimeter and lengths</span>:
+Two related functions return the length for lines or the perimeter for
+polygons. The functions are <big><code>ST_Length(geometry_column)</code></big> and <big><code>ST_Perimeter(geometry_column)</code></big> (both with options "use_spheroid" parameters). Find out the perimeter of
+the state of
+New York. Again, take care to understand the number produced. What are its units? What do they mean? Adapt your query to provide the answer in
+meters and miles (in one query). Now write a query to list the names of
+all US states, in descending order of perimeter (longest first). What
+is the state with the fourth longest perimeter?&nbsp;<br>
+
+    </li>
+
+    <li><span style="font-style: italic;">Determine
+the bounding box of a spatial object</span>: Bounding boxes are
+an important concept in spatial data handling. They provide the extent
+of the object along the ordinates of the coordinate system
+(northernmost point of a continent, and so on...). The functions
+<big><code>ST_XMax(geometry)</code></big>, <big><code>ST_XMin(geometry)</code></big>, <big><code>ST_YMax(geometry)</code></big>, and<big><code> ST_YMin(geometry) </code></big>return the coordinates of the minimum bounding rectangle (MBR) of a
+geometry. The function
+<big><code>ST_Envelope(geometry)</code></big> also provides the MBR as a geometry itself. Find the MBR of New York. Then retrieve the north-south extent of NY. Write a (single) SQL statement
+to give the minimum and maximum latitude for each state. Label the
+columns in your statement NAME, MAXLAT, and MINLAT. HINT:
+Assign aliases to the outputs of the SELECT statement
+      <div class="example">SELECT (Function1
+(parameters...)) AS alias1, (Function2
+(parameters...)) AS alias2 from ...</div>
+    </li>
+  </ol>
+</ol>
+<h3>Exercise P1.3: Spatial data storage </h3>
+
+In this exercise, you will define and create your own table with sample
+spatial data. At the end
+of the lab,
+don't forget to remove the metadata entries, drop the table and
+indexes. <br>
+<ol>
+
+  <li><span style="font-style: italic;">Inserting
+    spatial data</span>: Create a table "petrolstation" with spatial
+    data in a column called "location". You will
+    create a table containing the coordinates of three "petrol stations",
+    with the following coordinates:<br>
+
+    <table style="text-align: left; height: 204px; width: 407px;" border="1" cellpadding="2" cellspacing="2">
+
+      <tbody>
+
+        <tr>
+
+          <td colspan="1" rowspan="2">Name</td>
+
+          <td colspan="1" rowspan="2">ID</td>
+
+          <td colspan="2" rowspan="1">Point Geometry</td>
+
+          </tr>
+
+        <tr>
+
+          <td>Lon</td>
+
+          <td>Lat</td>
+
+          </tr>
+
+        <tr>
+
+          <td>Agip</td>
+
+          <td>1</td>
+
+          <td>-77.01669</td>
+
+          <td>33.90124</td>
+
+          </tr>
+
+        <tr>
+
+          <td>Shell</td>
+
+          <td>2</td>
+
+          <td>-77.017</td>
+
+          <td>33.90120</td>
+
+          </tr>
+
+        <tr>
+
+          <td>Texaco</td>
+
+          <td>3</td>
+
+          <td>-77.018</td>
+
+          <td>33.9013</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+    HINT: Use the following template:<br>
+
+    <div class="example">CREATE TABLE petrolstation(name VARCHAR(8), id&nbsp;INTEGER);<br>
+      <br>
+SELECT addGeometryColumn('yourschema','petrolstation','location',4326,'POINT',2);  <br>
+
+      <br>
+
+      INSERT INTO petrolstation VALUES (...., ST_GeomFromText('POINT(x1 x2)',4326));</div>
+
+</li>
+
+Note that the function <big><code>POINT</code></big> is a WKT ("well-known text") function. WKT is a geometry language used to describe shapes. The function <big><code>ST_GeomFromText</code></big> is a PostGIS function. You can use the WKT function format as the input to the PostGIS function. There also exist direct PostGIS functions that do the same job, but without WKT. For example, investigate achieving the other entries using the <big><code>ST_MakePoint</code></big> function. Verify the creation of the table by selecting its records. If you like,
+    you should also be able to view your new spatial data using QGIS. <br>
+
+</ol>
+
+<h3>Exercise P1.4: Simple geometric analysis</h3>
+
+In this section we perform some simple geometric analyses. In the next practical we shall perform some more complex
+analyses.<br>
+
+<ol>
+
+  <li><span style="font-style: italic;">Querying
+distances</span>:
+The
+distance between any geometry (point, line, or polygon) and a point can
+be determined using the function<big><code> ST_Distance</code></big>. Note that in the case of distance between a line
+or polygon and a point the procedure retrieves the <span style="font-style: italic;">minimum </span>distance. For example, try the following query which
+will provide the distance in metres between two of the petrol stations.
+What are the distances between all pairs of the petrol stations?<br>
+
+    <div class="example">SELECT ST_Distance(a.location, b.location,true) FROM petrolstation a, petrolstation b WHERE a.name='Agip' and b.name='Texaco';</div>
+
+    <div class="example">SELECT a.name, b.name, ST_Distance(a.location, b.location,true) FROM petrolstation a, petrolstation b;</div>
+
+  </li>
+
+  <li><span style="font-style: italic;">Advanced
+distance</span>:<span style="font-style: italic;"> </span>Select
+the names of the 10
+closest
+restaurants from the restaurant poi_id=33625120 (us_restaurants table).
+The general template
+for the distance clause is as for that above:
+    <div class="example">SELECT
+ST_Distance(query_objects, origin_object) FROM ...;</div>
+
+However, you will need to use a nested statement and the operator
+LIMIT from Practical 1 to answer this question. Assign an alias
+'DISTANCE' to the function <big><code>ST_Distance</code></big> and order by distance for the first subquery.</li>
+
+  <li><span style="font-style: italic;">Within
+distance</span>: We
+can
+also find places that are within a certain distance of each other
+(assuming an index has been created) using the <big><code>ST_DWithin</code></big> function. Try the following query, inserting a range of sensible values
+in place of the distance "x": <br>
+
+    <div class="example">SELECT * FROM petrolstation a,
+petrolstation
+b
+WHERE ST_DWithin(a.location, b.location, distance)='TRUE'; </div>
+
+  </li>
+
+  <li><span style="font-style: italic;">Buffering</span>:
+A buffer
+creates a new geometry containing all the locations within a specified
+distance of a input geometry. Create buffers of 1 mile around each of
+the petrol stations, using the following template:<br>
+
+    <div class="example">SELECT
+ST_Buffer(geometry,
+distance) FROM ... </div>
+
+  </li>
+
+  <li><span style="font-style: italic;">Centroid</span>:
+We can
+create
+the centroid (center of gravity) for a polygonal shape using the
+following template:
+    <div class="example">SELECT
+ST_Centroid(geometry) ... </div>
+
+Use this template to find the centroid of the buffer of 1000m for
+the Shell petrol station. What do you notice about this centroid and
+    why? <br>
+  </li>
+
+</ol>
+
+<h3>Assessment A1: Spatial SQL</h3>
+
+<h4>Preliminaries</h4>
+
+<ol>
+
+  <li>This assignment is worth 8% of your final class mark.</li>
+
+  <li>The due date for the assignment is clearly stated on the course
+web
+site, accessible via the LMS. <br>
+
+  </li>
+
+  <li>NO LATE ASSIGNMENTS WILL BE ACCEPTED. It is your
+responsibility
+to ensure you are aware of the assignment due date posted on the course
+web site. </li>
+
+</ol>
+
+<h4>Submission</h4>
+Your task is to answer the 8 questions in the
+"assignment" section below. You must submit one plain text file
+(named &lt;<span class="SpellE">studentno</span>&gt;.txt or .sql, where &lt;<span class="SpellE">studentno</span>&gt; is your student number). The text file must
+contain exactly 8 (or less) executable statements, one single statement per question, in the correct order. Each line should contain only one SQL query.
+You must leave a comment (e.g., "-- No answer for Q3") in place of
+any questions you do not answer. We will accept SQL code formatted over multiple lines, as long as you respect the ";" convention to end the statement. You must submit your file online using the course web site (accessible via the LMS at http://www.lms.unimelb.edu.au). No
+other submission method is acceptable.
+<br>
+
+<h4>Marking</h4>
+
+<ul>
+
+  <li>Your submission will be marked out of <span style="font-weight: bold;">8</span>, with up to one
+mark awarded per
+question. <br>
+
+  </li>
+
+  <li>A perfect answer will be awarded <span style="font-weight: bold;">1
+mark</span>. A near-perfect answer (almost exactly right, but
+perhaps
+with some slight mistake or missing step) may be awarded <span style="font-weight: bold;">half a mark</span>.
+Anything else will be
+awarded <span style="font-weight: bold;">0 marks</span>.
+    <br>
+
+  </li>
+
+  <li><span style="font-weight: bold;">Marks</span>
+will be <span style="font-weight: bold;">deducted</span>
+for any incorrect
+submissions (e.g., using a Word or HTML document instead of a plain
+text file; files that contain other than 8 answers (well formed SQL statements) and potential well formed SQL comments ( one per line); answers not in the correct order; answers that contain non-SQL
+parts, such as question numbers; or SQL queries lacking correct termination with a semicolon, ";").<br>
+
+  </li>
+
+  <li>It is not possible to get negative marks (e.g., an
+assignment
+score of 1 out of 8 with 2 marks deducted for incorrect submission
+will be a final mark of 0, not -1).</li>
+
+</ul>
+
+<h4>Assignment A1</h4>
+
+
+The questions you must answer for this assignment all concern the
+sample data from the US Census Bureau and US
+data from the Digital Chart of the World dataset. Your assignment is to
+provide SQL statements to
+answer the following 8 questions (see "Submission" section above
+for more details). <br>
+<span style="font-weight: bold;">Hint:</span> Beware of the difference between geometries and geographies (data types). You need to think of how different units relate to the measurement of e.g., distances and areas, and deal with this in your queries.<br>
+
+<span style="font-weight: bold;">Hint 2:</span> Only output the attributes you are asked for<br>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">In ascending order by length of their border, list by name the top 5 landlocked countries whose border length exceeds the average length of country borders in the world, by at least 25%, not inclusive. A landlocked country is a sovereign state entirely enclosed by land (as indicated by column "landlocked" in the table world_countries).<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">What are the 5 longest rivers in the USA? List the name of these rivers along with the names of the states that they flow through. Sort the results by River Name, then by State Name.<o:p></o:p></span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">List the country name(s), population and the population density of 10 countries having the most disconnected parts (Think of disconnected parts as the presence of one or more geographical regions of a country, in addition to the mainland). Use the spatial geometry column to determine the size of the countries. (Population Density = Population / square kilometre). Sort your results by the size of the country (biggest to smallest). You do not need to do any topological analysis to answer this question.</span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Assume that the cities ('Sacramento', 'Austin', 'Tallahassee', 'Richmond', 'Lansing') in the "us_cities" table are the respective capitals of states ('California', 'Texas', 'Florida', 'Virginia', 'Michigan') in the "us_states" table. For each of these states, which is the farthest city in the state that lies entirely in the south-east quadrant off the respective state capital? The output should have the columns [State Name, State Capital City, Farthest City, Distance and the Heading (in degrees)]. Order your results by the State Name.</span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Find the easternmost, westernmost, northernmost, and southernmost cities in the us_cities table, and print their names in this order.</span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">The global warming is a much talked about issue these days. One of the main concerns is the rise of the sea level which would affect densely populated coastal areas. In the article published on this topic (<a href=https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level>https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level</a>) there is a Figure showing different predictions for the change in sea level by the year 2100. Using the world_countries table, find out what ratio (percentage) of its current area would Australia lose if the sea level rises enough to cover 5 m of Australia's shore. List the name of the country, the percentage of its area that is lost (in %), and the size of the lost area in square kilometers.</span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">Which two world countries are furthest away from each other? List their names and the distance between them in kilometers.</span></li>
+ <li class="MsoNormal" style="line-height:16.8pt;mso-list:l6 level1 lfo7;
+     tab-stops:list 36.0pt"><span lang="EN" style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+     mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN">There are 7 different river systems in the us_rivers table. For each river system, find out how many counties they flow through and how many cities are closer than 15 miles to them. Disregard the rivers for which the river system is not specified. List the river system name, number of counties, and number of cities in the alphabetic order by the river system name.</span></li>
+</ol>
+</div>
+
+
+
+</body><div></div></html>
